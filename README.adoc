@@ -13,7 +13,7 @@ https://github.com/flowlogix/archetype[FlowLogix Starter] archetype.
 == Running the tests
 [source,shell]
 ----
-./mvnw verify
+./repro.sh
 ----
 
 == Regenerating the project
