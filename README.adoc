@@ -4,10 +4,10 @@ This project has been automatically generated using the
 https://start.flowlogix.com[FlowLogix Quick Start] tool from the
 https://github.com/flowlogix/archetype[FlowLogix Starter] archetype.
 
-== Running in development mode with live reload
+== Deploy the echo application (required for tests)
 [source,shell]
 ----
-./mvnw package server:dev
+./mvnw package server:deploy
 ----
 
 == Running the tests
