@@ -5,7 +5,7 @@
 #
 # Exit status is non-zero if any expectation fails.
 # Expectations are the *fixed* behaviour, i.e. server started with
-#   -Dorg.glassfish.grizzly.http.util.HttpRequestURIDecoder.ALLOW_BACKSLASH=true
+# asadmin create-system-property com.sun.enterprise.web.allowBackslash=true
 # Unfixed/default Payara fails the first two cases with "400 Invalid URI".
 
 set -u
@@ -29,8 +29,11 @@ check() {  # check <raw path> <expected status> [<expected body>]
 echo "Against $BASE"
 # The bug: %5C is a valid pct-encoded octet and must decode to a literal backslash inside the segment.
 check '/echo/foo%5Cbar'          200 'foo\bar'
-# It must stay *data*: not a separator, so no traversal and no re-mapping.
-check '/echo/..%5C..%5CWEB-INF'  200 '..\..\WEB-INF'
+# It must stay *data*: not a separator, so "..\" does not climb and the segment reaches JAX-RS intact.
+check '/echo/a%5C..%5Cb'         200 'a\..\b'
+# But the Payara valve reads '\' as '/' for the restricted-directory guard (as FileDirContext does on
+# Windows), so a backslash traversal that would land in WEB-INF/META-INF is refused before any servlet.
+check '/echo/..%5C..%5CWEB-INF'  404
 # Control.
 check '/echo/foobar'             200 'foobar'
 # A literal, un-encoded backslash is not a URI character at all; 400 is correct before AND after the fix.
