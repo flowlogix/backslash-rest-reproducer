@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.flowlogix.reproducers</groupId>
+    <artifactId>backslash-rest-reproducer</artifactId>
+    <version>1.x-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>Reproducer - Backslash in Rest Requests</name>
+
+    <parent>
+        <groupId>com.flowlogix</groupId>
+        <artifactId>payara-pom</artifactId>
+        <version>139</version>
+    </parent>
+
+    <properties>
+        <!-- Override target java release -->
+        <!-- <maven.compiler.release>25</maven.compiler.release> -->
+        <flowlogix.depchain.version>131</flowlogix.depchain.version>
+        <flowlogix.version>11.6</flowlogix.version>
+        <checkstyle.suppressionsLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/suppressions.xml</checkstyle.suppressionsLocation>
+        <checkstyle.headerLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/apache-header.txt</checkstyle.headerLocation>
+        <maven.build.cache.enabled>false</maven.build.cache.enabled>
+        <!-- Turn on console logging for tests -->
+        <test.redirect.to.file>false</test.redirect.to.file>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>${jakarta.ee.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.flowlogix.depchain</groupId>
+            <artifactId>integration-test</artifactId>
+            <version>${flowlogix.depchain.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.flowlogix</groupId>
+            <artifactId>flowlogix-jee</artifactId>
+            <version>${flowlogix.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

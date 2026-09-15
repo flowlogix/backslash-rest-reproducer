@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE arquillian [
+    <!ENTITY dockerConfig "
+        <property name='adminHttps'>true</property>
+        <property name='ignoreCertificates'>true</property>
+        <property name='adminUser'>admin</property>
+        <property name='adminPassword'>admin</property>
+    ">
+]>
+
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jboss.org/schema/arquillian"
+    xsi:schemaLocation="http://jboss.org/schema/arquillian https://www.jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <container qualifier="payara"/>
+    <container qualifier="payara-docker">
+        <configuration>
+            &dockerConfig;
+        </configuration>
+    </container>
+    <container qualifier="glassfish"/>
+    <container qualifier="glassfish-docker">
+        <configuration>
+            &dockerConfig;
+        </configuration>
+    </container>
+
+    <extension qualifier="webdriver">
+        <property name="browser">${webdriver.browser}</property>
+        <property name="firefoxArguments">-headless</property>
+        <property name="chromeArguments">--ignore-certificate-errors</property>
+        <property name="enableBidi">true</property>
+<!--    <property name="unhandledPromptBehaviour">ignore</property>  -->
+    </extension>
+</arquillian>
