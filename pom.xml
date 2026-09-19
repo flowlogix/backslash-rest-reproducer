@@ -62,4 +62,25 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>include-flowlogix-bomx</id>
+            <activation>
+                <property>
+                    <name>!flowlogix.bom.skip</name>
+                </property>
+            </activation>
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.flowlogix</groupId>
+                        <artifactId>flowlogix-bom</artifactId>
+                        <version>${flowlogix.bom.version}</version>
+                        <scope>import</scope>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+        </profile>
+    </profiles>
 </project>
