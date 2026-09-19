@@ -66,7 +66,7 @@
         <profile>
             <id>include-flowlogix-bom</id>
             <activation>
-                <activeByDefault/>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <dependencyManagement>
                 <dependencies>
