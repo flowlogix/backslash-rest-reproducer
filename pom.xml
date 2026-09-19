@@ -18,7 +18,7 @@
     <properties>
         <!-- Override target java release -->
         <!-- <maven.compiler.release>25</maven.compiler.release> -->
-        <flowlogix.bom.version>40</flowlogix.bom.version>
+        <flowlogix.bom.version>47</flowlogix.bom.version>
         <flowlogix.depchain.version>131</flowlogix.depchain.version>
         <flowlogix.version>11.6</flowlogix.version>
         <checkstyle.suppressionsLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/suppressions.xml</checkstyle.suppressionsLocation>
