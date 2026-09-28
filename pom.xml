@@ -12,7 +12,7 @@
     <parent>
         <groupId>com.flowlogix</groupId>
         <artifactId>payara-pom</artifactId>
-        <version>142</version>
+        <version>143</version>
     </parent>
 
     <properties>
@@ -20,7 +20,7 @@
         <!-- <maven.compiler.release>25</maven.compiler.release> -->
         <flowlogix.bom.version>48</flowlogix.bom.version>
         <flowlogix.depchain.version>131</flowlogix.depchain.version>
-        <flowlogix.version>11.6</flowlogix.version>
+        <flowlogix.version>11.7</flowlogix.version>
         <checkstyle.suppressionsLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/suppressions.xml</checkstyle.suppressionsLocation>
         <checkstyle.headerLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/apache-header.txt</checkstyle.headerLocation>
         <maven.build.cache.enabled>false</maven.build.cache.enabled>
