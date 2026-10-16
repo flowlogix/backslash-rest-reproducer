@@ -19,7 +19,7 @@
         <!-- Override target java release -->
         <!-- <maven.compiler.release>25</maven.compiler.release> -->
         <flowlogix.bom.version>51</flowlogix.bom.version>
-        <flowlogix.depchain.version>132</flowlogix.depchain.version>
+        <flowlogix.depchain.version>133</flowlogix.depchain.version>
         <flowlogix.version>11.7.1</flowlogix.version>
         <checkstyle.suppressionsLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/suppressions.xml</checkstyle.suppressionsLocation>
         <checkstyle.headerLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/apache-header.txt</checkstyle.headerLocation>
