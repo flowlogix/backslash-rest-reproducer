@@ -20,7 +20,7 @@
         <!-- <maven.compiler.release>25</maven.compiler.release> -->
         <flowlogix.bom.version>52</flowlogix.bom.version>
         <flowlogix.depchain.version>133</flowlogix.depchain.version>
-        <flowlogix.version>11.7.2</flowlogix.version>
+        <flowlogix.version>11.7.3</flowlogix.version>
         <checkstyle.suppressionsLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/suppressions.xml</checkstyle.suppressionsLocation>
         <checkstyle.headerLocation>${maven.multiModuleProjectDirectory}/src/checkstyle/apache-header.txt</checkstyle.headerLocation>
         <maven.build.cache.enabled>false</maven.build.cache.enabled>
